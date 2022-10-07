@@ -1,0 +1,41 @@
+{% extends 'payroll/base.html' %}
+
+{% block content %}
+{% include 'payroll/nav.html' %}
+    <style>
+        .box {
+            background:#343a40;
+            padding:10px;
+            border-radius:10px;
+            text-align:center;
+            margin:20px auto;
+            width:400px;
+            height:80px;
+            }
+        .text {
+            color: white;
+            
+            margin-top: 30px;
+        }
+    </style>
+    <body>
+        <div class="box">
+            <p class="text" style="margin-left:25px;float: left;">Total Employees: {{countEmp}}</p>
+            <p class="text" style="margin-right:50px;float: right;">Total Jobs: {{countJobs}}</p>
+        </div>
+        <div>
+            <table  style="width:45%;margin:25px auto">
+                <tr>
+                    <th>Name</th>
+                    <th>Job</th>
+                </tr>
+                {% for i in data %}
+                <tr style="text-align: center;">
+                    <td>{{i.getName}}</td>
+                    <td>{{i.jobDesc}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+{% endblock %}

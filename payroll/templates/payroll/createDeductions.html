@@ -1,0 +1,18 @@
+{% extends 'payroll/base.html' %}
+
+
+{% block content %}
+{% include 'payroll/nav.html' %}
+    <style>
+        p {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <form class="box" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,72 @@
+{% extends 'payroll/base.html' %}
+
+{% block content %}
+        <style>
+            .login {
+              background:#343a40;
+            	padding:4;
+            	border-radius:10px;
+              text-align:center;
+              margin:auto;
+              width:350px;
+            }
+
+            input[type=text],input[type=password] {
+              margin: 20px auto;
+              padding: 10px 10px;
+              width: 200px;
+              outline: none;
+              color: white;
+              border-radius: 24px;
+              background:transparent;
+            	border: 1px solid #fff;
+            	border-radius:10px;
+            	font-size:14px;
+              text-align: center;
+            	font-family:'Roboto',sans-serif;
+              transition: 1s;
+            }
+            input[type=text]:focus,input[type=password]:focus{
+              background:transparent;
+            	border:none;
+              text-align: center;
+            	border-bottom: 1px solid #fff;
+            	font-size:16px;
+            	border-radius:0px;
+            	color:white;
+            	font-family:'Roboto',sans-serif;
+            }
+            input[type=submit]{
+              font-family: "Roboto", sans-serif;
+              text-transform: uppercase;
+              outline: 0;
+              background:white;
+              width: 50%;
+              border: 0;
+              padding: 10px;
+              color: #000;
+              font-size: 14px;
+              border-radius:15px;
+            }
+            input[type=submit]:hover{
+              color:#fff;
+	            background-color:#579ded;
+            }
+            p{
+              color:white;
+              font-family: "Roboto", sans-serif;
+            }
+        </style>
+      {% load static %}
+      <div style="margin-top:100px"class="login">
+        <form method="POST">
+          {% csrf_token %}
+          <img src={% static 'user.png' %} style="height:150px"alt="">
+          <p style="margin-bottom:-10px">username</p>
+          <input type="text"  name="login" placeholder="">
+          <p style="margin-bottom:-10px">password</p>
+          <input type="password" name="password" placeholder="">
+          <input type="submit"  value="Log In">
+        </form>
+      </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'payroll/base.html' %}
+
+{% block content %}
+{% include 'payroll/nav.html' %}
+    <style>
+        .box {
+            background:#343a40;
+            padding:10px;
+            border-radius:10px;
+            text-align:center;
+            margin:20px auto;
+            width:400px;
+            height:80px;
+            }
+        .text {
+            color: white;
+            
+            margin-top: 30px;
+        }
+    </style>
+    <body>
+        <div>
+            <table  style="width:90%;margin:25px auto">
+                <tr>
+                    <th  style="width:10%;">Employee ID</th>
+                    <th style="width:15%;">Last Name</th>
+                    <th style="width:15%;"> First Name</th>
+                    <th style="width:15%;">Middle Name</th>
+                    <th style="width:20%;">Email</th>
+                    <th style="width:20%;">Contact Number</th>
+                </tr>
+                {% for i in data %}
+                <tr>
+                    <td >{{i.empID}}</td>
+                    <td>{{i.lastName}}</td>
+                    <td>{{i.firstName}}</td>
+                    <td>{{i.middleName}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.contactNo}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+{% endblock %}
